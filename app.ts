@@ -10,7 +10,13 @@ const main = async () => {
     name: 'he is name'
   }
 
+  // giving 28 
+  console.log(JSON.stringify(data).length)
+
   const encoded = protoPacket.encode(data).finish()
+
+  // giving 14
+  console.log(encoded.length)
 
   console.log(protoPacket.toObject(protoPacket.decode(Buffer.from(encoded))))
 
